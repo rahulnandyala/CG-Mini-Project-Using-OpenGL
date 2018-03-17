@@ -34,27 +34,27 @@ void frontscreen(void)
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
     setFont(GLUT_BITMAP_TIMES_ROMAN_24);
     glColor3f(0,0,1);
-    drawstring(20.0,90.0,0.0,"PESIT SOUTH CAMPUS");
+    drawstring(20.0-50,90.0,0.0,"PESIT SOUTH CAMPUS");
     glColor3f(0.7,0,1);
-    drawstring(21,82,0.0,"DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING");
+    drawstring(21-50,82,0.0,"DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING");
     glColor3f(1,0.5,0);
-    drawstring(38,70,0.0,"A MINI PROJECT ON");
+    drawstring(38-50,70,0.0,"A MINI PROJECT ON");
     glColor3f(1,0,0);
-    drawstring(40,60,0.0,"R Trees");
+    drawstring(40-50,60,0.0,"R Trees");
     glColor3f(1,0.5,0);
-    drawstring(20,50,0.0,"BY:");
+    drawstring(20-50,50,0.0,"BY:");
     glColor3f(0.5,0,0.5);
-    drawstring(10,40,0.0,"RAHUL REDDY NANDYALA      (1PE15CS116)");
-    drawstring(10,34,0.0,"RAHUL YEDIDA              (1PE15CS117)");
+    drawstring(10-50,40,0.0,"RAHUL REDDY NANDYALA      (1PE15CS116)");
+    drawstring(10-50,34,0.0,"RAHUL YEDIDA              (1PE15CS117)");
     glColor3f(1,0.5,0);
-    drawstring(68,50,0.0,"GUIDES:");
+    drawstring(68-50,50,0.0,"GUIDES:");
     glColor3f(0.5,0.2,0.2);
-    drawstring(63,40,0.0,"GUIDE NAME FIRST");
-    drawstring(63,34,0.0,"GUIDE NAME SECOND");
+    drawstring(63-50,40,0.0,"GUIDE NAME FIRST");
+    drawstring(63-50,34,0.0,"GUIDE NAME SECOND");
     glColor3f(1,0.1,1);
-    drawstring(32,10,0.0,"PRESS ENTER TO START");
+    drawstring(32-50,10,0.0,"PRESS ENTER TO START");
     glutSwapBuffers();
-    //glFlush();
+    glFlush();
 }
 
 void display()
@@ -144,19 +144,19 @@ void reshape(int w, int h)
 
 void myinit()
 {
-   // glOrtho(-0.0,200.0,-200.0,200.0,-0.0,200.0);
     glClearColor(1.0,1.0,1.0,1.0);
+    glOrtho(-100.0,100.0,-100.0,100.0,-50.0,50.0);
 }
 
 void main(int argc, char **argv)
 {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB|GLUT_DEPTH);
-    glutInitWindowSize(750, 750);
+    glutInitWindowSize(700, 700);
     glutCreateWindow("R Trees");
    // glutDisplayFunc(display);
     glutDisplayFunc(mydisplay);
-    glutReshapeFunc(reshape);
+    //glutReshapeFunc(reshape);
     glutKeyboardFunc(myKeyboardFunc);
     myinit();
     glEnable(GL_DEPTH_TEST);
